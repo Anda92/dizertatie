@@ -34,7 +34,7 @@ session_start();
 
    <!-- Including our scripting file. -->
 
-   <script type="text/javascript" src="scripts.js"></script>
+   <script type="text/javascript" src="script.js"></script>
 
    <!-- Including CSS file. -->
 
@@ -57,10 +57,10 @@ session_start();
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li ><a href="hometry.php">Home</a></li>
-                <li class="active"><a href="search.php">Profile</a></li>
+                <li class="active"><a href="hometry.php">Home</a></li>
+                <li><a href="lresearch.html">The last research</a></li>
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="">More <b class="caret"></b></a>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="">Account <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="documentation.html">Documentation</a></li>
                         <li><a href="research.html">Research</a></li>
@@ -99,12 +99,6 @@ session_start();
         width: 50%;
 }
 
-.hello{
-    width: 90%;
-    font-variant: small-caps;
-     font-weight: bold;
-}
-
 
         </style>
 
@@ -119,25 +113,20 @@ session_start();
 
        <div class="container-fluid">
        <div class="jumbotron">
-<div class="hello">
+
         <?php if(isset($_SESSION['username'])){
     echo "Welcome '{$_SESSION['username']}'";
 }
 ?>
-</div>
-<div class="search">
 
 <!-- Search box. -->
 
-
-   <input type="text" id="search" placeholder="Search Reports by ID" />
-
-
+   <input type="text" id="search" placeholder="Search" />
 
    <!-- Suggestions will be displayed in below div. -->
 
    <div id="display"></div>
-</div>
+
 
 
 </div>

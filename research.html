@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Research</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Bioarchaeology research</a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="hometry.php">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle " href="">More <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+
+						<li><a href="documentation.html">Documentation</a></li>
+                        <li class="active" ><a href="research.html">Research</a></li>
+                        <li><a href="register.php" class="lang" key="Register">Register</a></li>
+                        <li class="divider"></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="login.php"class="lang" key="Login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+ <h1 class="title" align="center" font="Arial"><b><u>Research</u></b></h1>
+
+
+<div class="img">
+<img src="img/activities.jpg" class="left" alt="activities" style="width:33%">
+<img src="img/teeth1.jpg" class="center" alt="teeth" style="width:33%">
+<img src="img/bone.jpg" class="right" alt="bone" style="width:33%">
+</div>
+
+<div class="btn">
+<!-- Trigger the modal with a button -->
+  <button type="button" class="btn1 btn-success btn-lg " data-toggle="modal" data-target="#myModal3" >Physical activity-MSM</button>
+  <!-- Trigger the modal with a button -->
+ <button type="button" class="btn2 btn-success btn-lg" data-toggle="modal" data-target="#myModal" align="right">Age determination-Dental eruption</button>
+<!-- Trigger the modal with a button -->
+  <button type="button" class="btn3 btn-success btn-lg btn " data-toggle="modal" data-target="#myModal2" >Age determination-The length of the bones</button>
+
+</div>
+
+<style>
+.btn1{
+	display: inline-block;
+	   margin: 10px 80px;
+}
+.btn2{
+display: inline-block;
+	   margin: 10px 80px;
+}
+
+.btn3{
+display: inline-block;
+	   margin: 10px 80px;
+}
+.btn1:hover {
+    background-color: black;
+    color: white;
+
+.btn2:hover {
+    background-color: #f44336;
+    color: white;
+
+}
+.btn3:hover {
+    background-color: #f44336;
+    color: white;
+
+}
+</style>
+<div class="container">
+
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Dental eruption</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" action="/action_page.php">
+		   <div class="form-group">
+      <label class="sr-only" for="skeleton">Skeleton ID:</label>
+      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="erupted">Erupted teeth:</label>
+      <input type="erupted" class="form-control" id="erupted" placeholder="Enter number of erupted teeth"  name="erupted">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="unerupted">Unerupted teeth:</label>
+      <input type="unerupted" class="form-control" id="unerupted" placeholder="Enter number of unerupted teeth" name="unerupted">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+
+  <div class="container">
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">The length of the bone</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" action="/action_page.php">
+                   <div class="form-group">
+      <label class="sr-only" for="skeleton">Skeleton ID:</label>
+      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
+    </div>
+		   <div class="form-group">
+      <label class="sr-only" for="humerus">Humerus length(mm):</label>
+      <input type="humerus" class="form-control" id="humerus" placeholder="Enter Humerus length in mm"  name="humerus">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="femur">Femur length(mm):</label>
+      <input type="femur" class="form-control" id="femur" placeholder="Enter Femur length in mm"  name="femur">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal2").modal();
+    });
+});
+</script>
+
+ <div class="container">
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Musculoskeletal Markers(MSM)</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" action="/action_page.php">
+                   <div class="form-group">
+      <label class="sr-only" for="skeleton">Skeleton ID:</label>
+      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
+    </div>
+		   <div class="form-group">
+      <label class="sr-only" for="humerus">Humerus MSM:</label>
+	  <p>Humerus MSM:</p>
+      <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Teres Major</i></label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Pectoralis Major</i></label>
+    </div>
+    <div class="checkbox disabled">
+      <label><input type="checkbox" value=""><i>Latissimus Dorsi</i></label>
+    </div>
+	<label class="sr-only" for="humerus">Radius MSM:</label>
+	<p>Radius MSM:</p>
+
+    <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Abductor Pollicis Longus</i></label>
+    </div>
+
+	<label class="sr-only" for="humerus">Ulna MSM:</label>
+	<p>Ulna MSM:</p>
+      <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Brachialis</i></label>
+    </div>
+
+	<label class="sr-only" for="humerus">Clavicle MSM:</label>
+	<p>Clavicle MSM:</p>
+      <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Deltoidus</i></label>
+    </div>
+
+	<label class="sr-only" for="humerus">Femur MSM:</label>
+	<p>Femur MSM:</p>
+      <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Linea Aspera</i></label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Gluteus Maximus</i></label>
+    </div>
+	<div class="checkbox">
+      <label><input type="checkbox" value=""><i>Gastrocnemian</i></label>
+    </div>
+
+	<label class="sr-only" for="humerus">Tibia MSM:</label>
+	<p>Tibia MSM:</p>
+    <div class="checkbox">
+      <label><input type="checkbox" value=""><i>Soleus</i></label>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal2").modal();
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>

@@ -19,7 +19,7 @@
 
 		<style type="text/css">
 
-			 img{
+	 img{
         margin: 10px;
     }
 	.img_bio{
@@ -70,16 +70,43 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
-            </form>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"class="lang" key="Login">Login</a></li>
+            <ul class="nav navbar-nav navbar-right">
+                              <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
+
+            </ul>
+        </div>
+    </nav>
+</div>
             </ul>
         </div>
     </nav>
@@ -103,7 +130,7 @@
 				<div class="bs-example">
 				 <div class="box">
 					<img src="img/hand.jpg" class="center" alt="The upper arm" style="width:80%">
-					 <button type="button" class="btn btn-details1 center-block" onclick="location.href = 'UpperArm.html';">Details</button>
+					 <button type="button" class="btn btn-details1 center-block" onclick="location.href = 'UpperArm.php';">Details</button>
 
 				</div>
 				</div>
@@ -116,7 +143,7 @@
 				<div class="bs-example">
 				 <div class="box">
 					<img src="img/clavicle.jpg" class="center" alt="Clavicle" style="width:80%">
-					<button type="button" class="btn btn-details2 center-block" onclick="location.href = 'Clavicle.html';">Details</button>
+					<button type="button" class="btn btn-details2 center-block" onclick="location.href = 'Clavicle.php';">Details</button>
 				</div>
 				</div>
 				</div>
@@ -129,7 +156,7 @@
 				<div class="bs-example">
 				 <div class="box">
 					<img src="img/leg.jpg" class="center" alt="Leg" style="width:80%">
-					<button type="button" class="btn btn-details3 center-block" onclick="location.href = 'Leg.html';">Details</button>
+					<button type="button" class="btn btn-details3 center-block" onclick="location.href = 'Leg.php';">Details</button>
 				</div>
 				</div>
 				</div>

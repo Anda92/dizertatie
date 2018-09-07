@@ -1,6 +1,9 @@
 <?php
+
 session_start();
-session_unset();
-session_destroy();
-header("location:login.php");
+setcookie(session_name(), "", time() - 3600); //send browser command remove sid from cookie
+session_destroy(); //remove sid-login from server storage
+session_write_close();
+header('Location: login.php');
+
 ?>

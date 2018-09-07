@@ -1,5 +1,7 @@
  <!DOCTYPE html>
 
+
+
     <html lang="en">
 
     <head>
@@ -47,21 +49,38 @@
                     </ul>
                 </li>
             </ul>
-            < <form class="navbar-form navbar-left">
-                <div class="input-group">
 
-                    <input type="text" class="form-control" placeholder="Search" >
-                    <div id="livesearch"></div>
-
-
-
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"onclick="showResult(this.value)"></span></button>
-                    </span>
-                </div>
-            </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+                <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
             </ul>
         </div>
     </nav>
@@ -86,13 +105,7 @@
 
 
 
-        <?php
-    session_start();
 
-    //connect to database
-
-    $connection=mysqli_connect("localhost","root","","bioarchaeology");
-        ?>
 
 <script>
 function showResult(str) {

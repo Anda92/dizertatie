@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
@@ -39,16 +40,38 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
-            </form>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"class="lang" key="Login">Login</a></li>
+                              <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
+
             </ul>
         </div>
     </nav>
@@ -94,7 +117,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                <form class="form" action="reports.html" method="post">
+                <form class="form" action="reports.php" method="post">
                  <div class="form-group">
       <h4>Skeleton Name:</h4>
       <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton Name"  name="skeleton">
@@ -199,14 +222,7 @@
     </div>
 
 
-
-<a href="reports.html?click=1" class="btn">Click me</a>
-<?php
-  if($_GET['click']){
-    calculate_age_bones();
-  }
-?>
-
+<button id = 'ajaxButton' onClick = 'imAnAjaxFunction()'>Submit</button>
 
   </form>
 </div>

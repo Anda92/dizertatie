@@ -9,16 +9,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Clavicle</title>
+		<title>The upper arm</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 		<style type="text/css">
-			body{
-				padding-top: 70px;
-			}
-			
+
+
 			 img{
         margin: 10px;
     }
@@ -27,9 +25,10 @@
     }
 	 .box{
         width: 50%;
-       
+		}
+
 		</style>
-		
+
 	</head>
 	   <body>
 <div class="container-fluid">
@@ -42,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">Clavicle</a>
+            <a href="#" class="navbar-brand">The Upper Arm</a>
         </div>
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -50,9 +49,45 @@
                 <li class="active"><a href="documentation.html">Back</a></li>
 				 </li>
             </ul>
-			<img src="img/clavic.png" class="img-d" alt="Humerus" style="width:100%"> 
-			<p class= "text-center" style="color:white;">CLAVICLE</p>
- 
+                        <ul class="nav navbar-nav navbar-right">
+                              <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+			<img src="img/hum.png" class="img-d" alt="Humerus" style="width:100%">
+			<p class= "text-center" style="color:white;">HUMERUS</p>
+			<img src="img/uln.png" class="img-d" alt="Ulna and Radius" style="width:100%">
+			<p class= "text-center" style="color:white;">RADIUS AND ULNA</p>
 			</body>
 
 </html>

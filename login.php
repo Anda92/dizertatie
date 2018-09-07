@@ -177,6 +177,24 @@ img.avatar {
 <?php
 require('db_conn.php');
 session_start();
+
+//TODO: do not hardcode, get from database
+const username = 'username';
+const password = 'password';
+
+if (isset($_POST['username']) && isset($_POST['password'])) //when form submitted
+{
+  if ($_POST['username'] === $username && $_POST['password'] === $password)
+  {
+    $_SESSION['username'] = $_POST['username']; //write login to server storage
+    header('Location: search.php'); //redirect to main
+  }
+  else
+  {
+    echo "<script>alert('Wrong login or password');</script>";
+    echo "<noscript>Wrong login or password</noscript>";
+  }
+}
 // If form submitted, insert values into the database.
 if (isset($_POST['username'])){
         // removes backslashes

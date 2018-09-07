@@ -64,7 +64,40 @@ tr:nth-child(even) {
                 <li class="active"><a href="research.php">Back</a></li>
                  </li>
             </ul>
-             </nav>
+                        <ul class="nav navbar-nav navbar-right">
+                              <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
+
+            </ul>
+        </div>
+       </nav>
         </div>
 
 

@@ -15,10 +15,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 		<style type="text/css">
-			body{
-				padding-top: 70px;
-			}
-			
+
+
 			 img{
         margin: 10px;
     }
@@ -27,9 +25,9 @@
     }
 	 .box{
         width: 50%;
-       
+
 		</style>
-		
+
 	</head>
 	   <body>
 <div class="container-fluid">
@@ -50,11 +48,46 @@
                 <li class="active"><a href="documentation.html">Back</a></li>
 				 </li>
             </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                              <?php
+
+session_start(); //gets session id from cookies, or prepa
+
+if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
+
+?>
+
+<li><a href="login.php"class="lang" key="Login">Login</a></li>
+
+<?php
+
+} else {
+
+  echo "Hi, " . $_SESSION['username'];
+
+?>
+
+<li><a href="logout.php"class="lang" key="Logout">Logout</a></li>
+
+<?php
+
+}
+
+
+    //connect to database
+
+    $connection=mysqli_connect("localhost","root","","bioarchaeology");
+        ?>
+
+            </ul>
+        </div>
+    </nav>
+</div>
 			<img src="img/tib.png" class="img-d" alt="Tibia" style="width:100%">
-			<p class= "text-center" style="color:white">TIBIA AND FIBULA</p>			
+			<p class= "text-center" style="color:white">TIBIA AND FIBULA</p>
 			<img src="img/fem.png" class="img-d" alt="Femur" style="width:100%">
 			<p class="text-center" style="color:white;">FEMUR</p>
- 
+
 			</body>
 
 </html>

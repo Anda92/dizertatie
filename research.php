@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
           <script src="js/jquery-3.3.1.min.js"></script>
+          <script src="ajax_r.js"></script>
 </head>
 <body>
 
@@ -117,7 +118,7 @@ if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and l
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                <form class="form" action="reports.php" method="post">
+                <form class="form" action="reports.php" method="post" id="testName">
                  <div class="form-group">
       <h4>Skeleton Name:</h4>
       <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton Name"  name="skeleton">
@@ -222,7 +223,7 @@ if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and l
     </div>
 
 
-<button id = 'ajaxButton' onClick = 'imAnAjaxFunction()'>Submit</button>
+<button type="button" onclick="allfunctions()">Click Me</button>
 
   </form>
 </div>

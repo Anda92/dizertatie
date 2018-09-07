@@ -54,7 +54,7 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="">More <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="documentation.html">Documentation</a></li>
-                        <li><a href="research.html">Research</a></li>
+                        <li><a href="research.php">Research</a></li>
                         <li><a href="register.php" class="lang" key="Register">Register</a></li>
                         <li class="divider"></li>
 
@@ -118,6 +118,11 @@ if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and l
     }
      .box{
         width: 50%;
+}
+
+td {
+    padding: 5px !important;
+    border: 1px solid black;
 }
 
 

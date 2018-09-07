@@ -10,12 +10,12 @@ if (isset($_POST['search'])) {
 
 //Search box value assigning to $Name variable.
 
-   $ID = $_POST['search'];
+   $name = $_POST['search'];
 
 
 //Search query.
 
-   $Query = "SELECT * FROM reports WHERE ID LIKE '%$ID%' ";
+   $Query = "SELECT * FROM skeleton WHERE name LIKE '%$name%' ";
 
 //Query execution
 
@@ -23,17 +23,13 @@ if (isset($_POST['search'])) {
 
 //Creating unordered list to display result.
 
-   echo '
-
-<ul>
-
-   ';
+   echo '<ul>';
 
    //Fetching result from database.
 
    while ($Result = MySQLi_fetch_array($ExecQuery)) {
 
-       ?>
+       // ?>
 
    <!-- Creating unordered list items.
 
@@ -41,13 +37,16 @@ if (isset($_POST['search'])) {
 
         By passing fetched result as parameter. -->
 
-   <li onclick='fill("<?php echo $Result['ID']; ?>")'>
+   <li onclick='fill("<?php echo $Result['name']; ?>")'>
 
-   <a> test
+   <a>
 
    <!-- Assigning searched result in "Search box" in "search.php" file. -->
 
-       <?php echo $Result['ID']; ?>
+       <?php echo $Result['name']; ?>
+       <?php echo $Result['age_bones']; ?>
+       <?php echo $Result['age_teeth']; ?>
+       <?php echo $Result['activity']; ?>
     </a>
    </li>
 

@@ -17,15 +17,14 @@ $(document).ready(function() {
    //On pressing a key on "Search box" in "search.php" file. This function will be called.
 
    $("#search").change(function() {
-    alert('something')
 
        //Assigning search box value to javascript variable named as "name".
 
-       var ID = $('#search').val();
+       var name = $('#search').val();
 
        //Validating, if "name" is empty.
 
-       if (ID == "") {
+       if (name == "") {
 
            //Assigning empty value to "display" div in "search.php" file.
 
@@ -55,7 +54,7 @@ $(document).ready(function() {
 
                    //Assigning value of "name" into "search" variable.
 
-                   search: ID
+                   search: name
 
                },
 

@@ -26,7 +26,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="hometry.php">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="search.php">Profile</a></li>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle " href="">More <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -53,7 +53,7 @@
         </div>
     </nav>
 </div>
- <h1 class="title" align="center" font="Arial"><b><u>Research</u></b></h1>
+
 
 
 <div class="img">
@@ -64,213 +64,145 @@
 
 <div class="btn">
 <!-- Trigger the modal with a button -->
-  <button type="button" class="btn1 btn-success btn-lg " data-toggle="modal" data-target="#myModal3" >Physical activity-MSM</button>
-  <!-- Trigger the modal with a button -->
- <button type="button" class="btn2 btn-success btn-lg" data-toggle="modal" data-target="#myModal" align="right">Age determination-Dental eruption</button>
-<!-- Trigger the modal with a button -->
-  <button type="button" class="btn3 btn-success btn-lg btn " data-toggle="modal" data-target="#myModal2" >Age determination-The length of the bones</button>
-
+  <button type="button" class="btn1 btn-success btn-lg " data-toggle="modal" data-target="#modal1" >Research Time</button>
 </div>
 
 <style>
 .btn1{
 	display: inline-block;
-	   margin: 10px 80px;
-}
-.btn2{
-display: inline-block;
-	   margin: 10px 80px;
+	   margin: 50px 50px;
+
 }
 
-.btn3{
-display: inline-block;
-	   margin: 10px 80px;
-}
 .btn1:hover {
     background-color: black;
     color: white;
-
-.btn2:hover {
-    background-color: #f44336;
-    color: white;
-
+  }
+.modal-dialog{
+  width: 70%;
 }
-.btn3:hover {
-    background-color: #f44336;
-    color: white;
 
-}
 </style>
 <div class="container">
 
-
-
-
-
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Dental eruption</h4>
-        </div>
-        <div class="modal-body">
-          <form class="form" action="/action_page.php">
-		   <div class="form-group">
-      <label class="sr-only" for="skeleton">Skeleton ID:</label>
-      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="erupted">Erupted teeth:</label>
-      <input type="erupted" class="form-control" id="erupted" placeholder="Enter number of erupted teeth"  name="erupted">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="unerupted">Unerupted teeth:</label>
-      <input type="unerupted" class="form-control" id="unerupted" placeholder="Enter number of unerupted teeth" name="unerupted">
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <script>
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
-</script>
-
-
-  <div class="container">
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal2" role="dialog">
+  <div class="modal fade" id="modal1" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">The length of the bone</h4>
-        </div>
-        <div class="modal-body">
-          <form class="form" action="/action_page.php">
-                   <div class="form-group">
-      <label class="sr-only" for="skeleton">Skeleton ID:</label>
-      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
+
+                <form class="form" action="calculate_age.php" method="post">
+                 <div class="form-group">
+      <h4>Skeleton Name:<h4>
+      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton Name"  name="skeleton">
     </div>
-		   <div class="form-group">
-      <label class="sr-only" for="humerus">Humerus length(mm):</label>
+
+              <h4 class="modal-title">The length of the bone</h4>
+        </div>
+
+        <div class="modal-body">
+
+
+    <div class="form-group">
+      <h5>Humerus length(mm):</h5>
       <input type="humerus" class="form-control" id="humerus" placeholder="Enter Humerus length in mm"  name="humerus">
     </div>
     <div class="form-group">
-      <label class="sr-only" for="femur">Femur length(mm):</label>
+      <h5>Femur length(mm):</h5>
       <input type="femur" class="form-control" id="femur" placeholder="Enter Femur length in mm"  name="femur">
     </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
 
-    </div>
-</div>
+          <h4 class="modal-title">Dental eruption</h4>
 
-
-<script>
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal2").modal();
-    });
-});
-</script>
-
- <div class="container">
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal3" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Musculoskeletal Markers(MSM)</h4>
-        </div>
         <div class="modal-body">
-          <form class="form" action="/action_page.php">
-                   <div class="form-group">
-      <label class="sr-only" for="skeleton">Skeleton ID:</label>
-      <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton ID"  name="skeleton">
+
+
+    <div class="form-group">
+      <h5>Erupted primary teeth:</h5>
+      <input type="erupted" class="form-control" id="erupted" placeholder="Enter number of  teeth"  name="erupted">
     </div>
+        <div class="form-group">
+      <h5>Erupted permanent teeth:</h5>
+      <input type="erupted2" class="form-control" id="erupted2" placeholder="Enter number of  teeth"  name="erupted">
+    </div>
+    <div class="form-group">
+      <h5">Unerupted teeth:</h5>
+      <input type="unerupted" class="form-control" id="unerupted" placeholder="Enter number  teeth" name="unerupted">
+</div>
+
+
+
+          <h4 class="modal-title">Musculoskeletal Markers(MSM)</h4>
+
+        <div class="modal-body">
+
 		   <div class="form-group">
       <label class="sr-only" for="humerus">Humerus MSM:</label>
 	  <p>Humerus MSM:</p>
       <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Teres Major</i></label>
+      <label><input type="checkbox" name=msm[] value="Kayaking,"><i>Teres Major</i></label>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Pectoralis Major</i></label>
+      <label><input type="checkbox" name=msm[] value="Rowing,"><i>Pectoralis Major</i></label>
     </div>
     <div class="checkbox disabled">
-      <label><input type="checkbox" value=""><i>Latissimus Dorsi</i></label>
+      <label><input type="checkbox" name=msm[] value="Flexion and repetitive extension,"><i>Latissimus Dorsi</i></label>
     </div>
 	<label class="sr-only" for="humerus">Radius MSM:</label>
 	<p>Radius MSM:</p>
 
     <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Abductor Pollicis Longus</i></label>
+      <label><input type="checkbox" name=msm[] value="Masonry work, the baker's work, wather transport, fermer's work,"><i>Abductor Pollicis Longus</i></label>
+    </div>
+   <div class="checkbox">
+      <label><input type="checkbox" name=msm[] value="Carrying heavy loads with the elbows bent,"><i>Biceps</i></label>
     </div>
 
 	<label class="sr-only" for="humerus">Ulna MSM:</label>
 	<p>Ulna MSM:</p>
       <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Brachialis</i></label>
+      <label><input type="checkbox" name=msm[] value="travel by boat, hunters, involved in various battles,"><i>Brachialis</i></label>
     </div>
 
 	<label class="sr-only" for="humerus">Clavicle MSM:</label>
 	<p>Clavicle MSM:</p>
       <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Deltoidus</i></label>
+      <label><input type="checkbox" name=msm[] value="throwing with objects,"><i>Deltoidus</i></label>
+    </div>
+          <div class="checkbox">
+      <label><input type="checkbox" name=msm[] value="using a double-bladed paddle,"><i>Costoclavicle ligament</i></label>
+    </div>
+          <div class="checkbox">
+      <label><input type="checkbox" name=msm[] value="chopping wood, carring bunden on the shoulders and/or upper back,"><i>Conoid ligament</i></label>
     </div>
 
 	<label class="sr-only" for="humerus">Femur MSM:</label>
 	<p>Femur MSM:</p>
       <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Linea Aspera</i></label>
+      <label><input type="checkbox" name=msm[] value="sea-related activities, fishing,"><i>Linea Aspera</i></label>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Gluteus Maximus</i></label>
+      <label><input type="checkbox" name=msm[] value="skiing, riding,"><i>Gluteus Maximus</i></label>
     </div>
 	<div class="checkbox">
-      <label><input type="checkbox" value=""><i>Gastrocnemian</i></label>
+      <label><input type="checkbox" name=msm[] value="playing footbal, driving,"><i>Gastrocnemian</i></label>
     </div>
 
 	<label class="sr-only" for="humerus">Tibia MSM:</label>
 	<p>Tibia MSM:</p>
     <div class="checkbox">
-      <label><input type="checkbox" value=""><i>Soleus</i></label>
+      <label><input type="checkbox" name=msm[] value="runs, transports heavy packages."><i>Soleus</i></label>
     </div>
-    </div>
+ <a href="#modal2" data-toggle="modal" data-dismiss="modal">Next ></a>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+
+
+
+    <button type="button" class="btn btn-default" >Submit</button>
   </form>
 </div>
         </div>
@@ -280,6 +212,36 @@ $(document).ready(function(){
       </div>
 
     </div>
+</div>
+
+  <!-- #modal 2 -->
+<div class="modal fade" id="modal2" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Reports</h4>
+      </div>
+      <div class="modal-body">
+  <form action="" method="post">
+
+
+            <?php myfunctions();?>
+
+
+  <a href="#modal1" data-toggle="modal" data-dismiss="modal">< Previous</a>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"> Save </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+</form>
 </div>
 
 

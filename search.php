@@ -130,7 +130,7 @@ session_start();
 <!-- Search box. -->
 
 
-   <input type="text" id="search" placeholder="Search Reports by ID" />
+   <input type="text" id="search" placeholder="Search Reports by name" />
 
 
 

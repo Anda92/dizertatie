@@ -35,7 +35,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="hometry.php">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="search.php">Profile</a></li>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="">More <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -49,9 +49,14 @@
             </ul>
             < <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
+
+                    <input type="text" class="form-control" placeholder="Search" >
+                    <div id="livesearch"></div>
+
+
+
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"onclick="showResult(this.value)"></span></button>
                     </span>
                 </div>
             </form>

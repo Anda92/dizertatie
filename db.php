@@ -9,7 +9,7 @@ $con = MySQLi_connect(
 
    "", //Database password.
 
-   "autocomplete" //Database name or anything you would like to call it.
+   "bioarchaeology" //Database name or anything you would like to call it.
 
 );
 

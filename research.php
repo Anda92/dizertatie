@@ -94,9 +94,9 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                <form class="form" action="calculate_age.php" method="post">
+                <form class="form" action="reports.html" method="post">
                  <div class="form-group">
-      <h4>Skeleton Name:<h4>
+      <h4>Skeleton Name:</h4>
       <input type="name" class="form-control" id="skeleton" placeholder="Enter Skeleton Name"  name="skeleton">
     </div>
 
@@ -112,7 +112,7 @@
     </div>
     <div class="form-group">
       <h5>Femur length(mm):</h5>
-      <input type="text class="form-control" id="femur" placeholder="Enter Femur length in mm"  name="femur">
+      <input type="text" class="form-control" id="femur" placeholder="Enter Femur length in mm"  name="femur">
     </div>
 
 
@@ -130,7 +130,7 @@
       <input type="text" class="form-control" id="erupted2" placeholder="Enter number of  teeth"  name="erupted2">
     </div>
     <div class="form-group">
-      <h5">Unerupted teeth:</h5>
+      <h5>Unerupted teeth:</h5>
       <input type="text" class="form-control" id="unerupted" placeholder="Enter number  teeth" name="unerupted">
 </div>
 
@@ -197,12 +197,17 @@
     <div class="checkbox">
       <label><input type="checkbox" name="msm[]" value="runs, transports heavy packages."><i>Soleus</i></label>
     </div>
- <a href="#modal2" data-toggle="modal" data-dismiss="modal">Next ></a>
 
 
 
+<a href="reports.html?click=1" class="btn">Click me</a>
+<?php
+  if($_GET['click']){
+    calculate_age_bones();
+  }
+?>
 
-    <button type="button" class="btn btn-default" >Submit</button>
+
   </form>
 </div>
         </div>
@@ -214,35 +219,9 @@
     </div>
 </div>
 
-  <!-- #modal 2 -->
-<div class="modal fade" id="modal2" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Reports</h4>
-      </div>
-      <div class="modal-body">
-  <form action="" method="post">
 
 
-            <?php myfunctions();?>
 
-
-  <a href="#modal1" data-toggle="modal" data-dismiss="modal">< Previous</a>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"> Save </button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-</form>
-</div>
 
 
 <script>

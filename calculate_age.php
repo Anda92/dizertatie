@@ -116,7 +116,8 @@ if($l_femur<403 AND $l_femur>386){
 
 
 $age_b = ($age_h + $age_f)/2;
-return $age_b;
+
+echo $age_b;
 
 }
 

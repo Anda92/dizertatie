@@ -10,4 +10,5 @@ function imAnAjaxFunction(){
 
     request.done( function ( data ) {
         $('#ajaxButton').html( data );
-        </script>
+}
+</script>

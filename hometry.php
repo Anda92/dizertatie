@@ -37,12 +37,16 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="hometry.php">Home</a></li>
-                <li><a href="search.php">Profile</a></li>
+                <?php if(isset($_SESSION['username'])) { ?>
+                    <li><a href="search.php">Profile</a></li>
+                <?php } ?>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="">More <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="documentation.html">Documentation</a></li>
-                        <li><a href="research.php">Research</a></li>
+                        <?php if(isset($_SESSION['username'])) { ?>
+                            <li><a href="documentation.html">Documentation</a></li>
+                            <li><a href="research.php">Research</a></li>
+                        <?php } ?>
                         <li><a href="register.php" class="lang" key="Register">Register</a></li>
                         <li class="divider"></li>
 

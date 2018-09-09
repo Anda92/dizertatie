@@ -5,7 +5,7 @@
 include "db.php";
 
 //Getting value of "search" variable from "script.js".
-
+session_start();
 if (isset($_POST['search'])) {
 
 //Search box value assigning to $Name variable.
@@ -15,7 +15,7 @@ if (isset($_POST['search'])) {
 
 //Search query.
 
-   $Query = "SELECT * FROM skeleton WHERE name LIKE '%$name%' ";
+   $Query = "SELECT * FROM skeleton WHERE name LIKE '%$name%' AND created_by = ". $_SESSION['user_id'];
 
 //Query execution
 

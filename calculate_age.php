@@ -117,7 +117,7 @@ if($l_femur<403 && $l_femur>386){
 
 $age_b = ($age_h + $age_f)/2;
 
-echo $age_b;
+return $age_b;
 
 }
 
@@ -148,6 +148,7 @@ $unerupt= $_POST["unerupted"];
 $age_t=0;
 
 function calculate_age_teeth($e_pr, $e_pe, $unerupt){
+    $age_t = 0;
 if($e_pr>4 && $e_pr<10 && $e_pe==0 && $unerupt>28 && $unerupt<32){
 
  $age_t=1;
@@ -208,6 +209,7 @@ if($e_pr=0 && $e_pe>24 && $e_pe<29 && $unerupt>1 && $unerupt<5){
         $age_t=12;
 
 }
+
 return $age_t;
 }
 
@@ -229,8 +231,8 @@ if (isset($_REQUEST['skeleton'])) {
 
 $ageTeeth = calculate_age_teeth($_REQUEST['erupted'], $_REQUEST['erupted2'], $_REQUEST['unerupted']);
 $ageBones = calculate_age_bones($_REQUEST['humerus'], $_REQUEST['femur']);
-
-$sql = 'INSERT INTO skeleton (name, humerus_length, femur_length, erupted_primary_teeth, erupted_permanent_teeth, unerupted_teeth, activity, age_bones, age_teeth) VALUES(
+session_start();
+$sql = 'INSERT INTO skeleton (name, humerus_length, femur_length, erupted_primary_teeth, erupted_permanent_teeth, unerupted_teeth, activity, age_bones, age_teeth, created_by) VALUES(
 "' . $skeleton . '",
 "' . $_REQUEST['humerus'] . '",
 "' . $_REQUEST['femur'] . '",
@@ -239,11 +241,12 @@ $sql = 'INSERT INTO skeleton (name, humerus_length, femur_length, erupted_primar
 "' . $_REQUEST['unerupted'] . '",
 "' . $activites . '",
 "' . $ageBones . '",
-"' . $ageTeeth . '"
+"' . $ageTeeth . '",
+"' . $_SESSION['user_id'] . '"
 )';
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New record created successfully. Bones age: " . $ageBones . " Teeth age: " . $ageTeeth;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

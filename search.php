@@ -1,5 +1,12 @@
 
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+    echo 'Va rugam sa va logati';
 
+    die();
+}
+?>
 <!DOCTYPE html>
 
     <html lang="en">
@@ -66,7 +73,6 @@
 
                               <?php
 
-session_start(); //gets session id from cookies, or prepa
 
 if (session_id() == '' || !isset($_SESSION['username'])) { //if sid exists and login for sid exists
 

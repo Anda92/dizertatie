@@ -179,22 +179,22 @@ require('db_conn.php');
 session_start();
 
 //TODO: do not hardcode, get from database
-const username = 'username';
-const password = 'password';
+// const username = 'username';
+// const password = 'password';
 
-if (isset($_POST['username']) && isset($_POST['password'])) //when form submitted
-{
-  if ($_POST['username'] === $username && $_POST['password'] === $password)
-  {
-    $_SESSION['username'] = $_POST['username']; //write login to server storage
-    header('Location: search.php'); //redirect to main
-  }
-  else
-  {
-    echo "<script>alert('Wrong login or password');</script>";
-    echo "<noscript>Wrong login or password</noscript>";
-  }
-}
+// if (isset($_POST['username']) && isset($_POST['password'])) //when form submitted
+// {
+//   if ($_POST['username'] === $username && $_POST['password'] === $password)
+//   {
+//     $_SESSION['username'] = $_POST['username']; //write login to server storage
+//     header('Location: search.php'); //redirect to main
+//   }
+//   else
+//   {
+//     echo "<script>alert('Wrong login or password');</script>";
+//     echo "<noscript>Wrong login or password</noscript>";
+//   }
+// }
 // If form submitted, insert values into the database.
 if (isset($_POST['username'])){
         // removes backslashes
@@ -208,8 +208,12 @@ if (isset($_POST['username'])){
 and password='".md5($password)."'";
 	$result = mysqli_query($con,$query) or die(mysql_error());
 	$rows = mysqli_num_rows($result);
+
+    $data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
         if($rows==1){
 	    $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $data[0]['id'];
             // Redirect user to index.php
 	    header("Location: search.php");
          }else{
@@ -254,6 +258,7 @@ and password='".md5($password)."'";
 </form>
 </div>
 <p>Not registered yet? <a href='register.php'>Register Here</a></p>
+<p>Not registered yet? <a href='reset_password.php'>Reset password</a></p>
 </div>
 <?php } ?>
 </body>
